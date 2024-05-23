@@ -1,0 +1,11 @@
+name: netrc
+version: 0.1.0
+
+authors:
+  - usiegj00
+
+targets:
+  netrc:
+    main: src/netrc.cr
+
+crystal: '>= 1.12.1'
