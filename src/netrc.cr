@@ -190,19 +190,13 @@ class Netrc
   property new_item_prefix : String
 
   class Entry
+    property login : String
+    property password : String
     def initialize(login : String, password : String)
       @login = login
       @password = password
     end
-    def to_ary
-      [@login, @password]
-    end
   end
-#  Entry = Struct.new(login : String, password : String) do
-#    def to_ary
-#      [login, password]
-#    end
-#  end
 
   def [](k : String)
     # puts @payload.inspect
@@ -264,11 +258,4 @@ end
 
 class Netrc::Error < Exception
 end
-
-# nrc = Netrc.read
-# puts nrc.unparse
-# puts nrc["build.io"].inspect
-# user_netrc = Netrc.read
-# user_netrc["build.io"]  = {"me@you.com", "token"}
-# user_netrc.save
 

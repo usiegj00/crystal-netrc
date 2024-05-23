@@ -14,10 +14,20 @@ dependencies:
 
 ## Usage
 
+Write:
 ```crystal
 user_netrc = Netrc.read
-user_netrc["some.host.name"]  = {"email", "token"}
+user_netrc["some.host.name"]  = {"email", "password"}
 user_netrc.save
+```
+
+Read:
+```crystal
+user_netrc = Netrc.read
+puts user_netrc.unparse
+ent = user_netrc["some.host.name"]
+exit if ent.nil?
+puts ent.password
 ```
 
 ## Contributing
